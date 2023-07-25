@@ -1,9 +1,6 @@
 # Hangman
 import random
-
-Answer = False
-
-loop = 10
+lives = 5
 
 wordchoices = ["word", "big", "fat", "marmaduke", "giraffe", "camel", "baboon"]
 
@@ -16,8 +13,8 @@ print(display)
 
 
 print("Word picked was: "+ WordPicked)
-while loop > 1:
-
+while lives > 1:
+    print(f'You have {lives} left')
     Userinput = input("Guess a letter\n").lower()
     if Userinput in WordPicked:
         for i in range(len(WordPicked)):
@@ -27,3 +24,4 @@ while loop > 1:
         print(''.join(display))
     else:
         print("This is wrong try again\n")
+    lives -= 1
