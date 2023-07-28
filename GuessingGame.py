@@ -1,6 +1,10 @@
 #Higher or lower Guessing game
 import random
 
+EASY = 10
+HARD = 5
+
+pickednumber = random.randint(1,100)
 
 def compareguess(guess, pickednumber,lives):
     if guess > pickednumber:
@@ -13,18 +17,15 @@ def compareguess(guess, pickednumber,lives):
         print(f"You guessed correctly the number was {pickednumber}")    
         return 0 
 
-easy = 10
-hard = 5
 
-pickednumber = random.randint(1,100)
 
 print("Welcome to the number guessing game!\n I'm thinking of a number between 1 and 100.")
-lives = input("Choose a difficulty. Type 'easy' or 'hard': ")
+lives = input("Choose a difficulty. Type 'EASY' or 'HARD': ")
 
-if lives == "easy":
-    lives = easy
-elif lives == "hard":
-    lives = hard
+if lives == "EASY":
+    lives = EASY
+elif lives == "HARD":
+    lives = HARD
 else:
     print("Invalid choice, please try again")
 
